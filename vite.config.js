@@ -17,7 +17,7 @@ export default defineConfig({
     allowedHosts: ["3000-irzmo3yjgfx1po5udv20f-8fe309e2.manusvm.computer"],
   },
   build: {
-    outDir: "../dist/client",
+    outDir: "dist",
     emptyOutDir: true,
   },
 });
