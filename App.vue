@@ -16,7 +16,7 @@ const activeSubsection = ref("basic");
         <div class="logo">
           <img :src="calculadora" alt="calculadora">
           <div class="logo-text">
-            <h1>CalcDiff Pro</h1>
+            <h1>CalcDiff</h1>
             <p>Generador de Ejercicios de Cálculo Diferencial</p>
           </div>
         </div>
@@ -162,7 +162,7 @@ const activeSubsection = ref("basic");
 .logo-icon {
   width: 40px;
   height: 40px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #00FFFF 0%, #00AFEE 100%);
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -229,7 +229,7 @@ const activeSubsection = ref("basic");
 }
 
 .nav-list li.active {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #00FFFF 0%, #00AFEE 100%);
   color: white;
   font-weight: 500;
 }
