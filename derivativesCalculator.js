@@ -3,7 +3,23 @@ import * as math from "mathjs";
 const derivativeCache = new Map();
 
 function normalizeMathExpression(expr) {
-  return expr.replace(/^f\s*\(\s*x\s*\)\s*=\s*/, "").trim();
+  // quitar el prefijo "f(x) ="
+  let s = expr.replace(/^f\s*\(\s*x\s*\)\s*=\s*/i, "").trim();
+
+  // Normalizaciones útiles para mathjs
+  // ln(...) -> log(...)
+  s = s.replace(/\bln\s*\(/gi, "log(");
+  // e^(...) o e^ ( ... ) -> exp(...)
+  s = s.replace(/e\^\s*\(/gi, "exp(");
+  // √(...) -> sqrt(...)
+  s = s.replace(/√\s*\(/g, "sqrt(");
+  // Reemplazar exponentes unicode si aparecen (opcional)
+  s = s.replace(/×/g, "*");
+
+  // Opcional: mantener espacios consistentes
+  s = s.replace(/\s+/g, " ").trim();
+
+  return s;
 }
 
 export function calculateDerivative(
